@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.cloudfirebase.databinding.ActivityMainBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         fab.setOnClickListener{
 
         }
+        FirebaseApp.initializeApp(this)
         val db = FirebaseFirestore.getInstance()
         people = db.collection("people")
         people!!.get().addOnCompleteListener { task ->
