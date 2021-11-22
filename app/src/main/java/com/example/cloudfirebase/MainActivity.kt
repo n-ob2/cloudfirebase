@@ -5,7 +5,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.cloudfirebase.databinding.ActivityMainBinding
@@ -17,7 +16,7 @@ import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
-    private var dataText: TextView? = null
+    private var dataText: EditText? = null
     private var nameText: EditText? = null
     private var db: FirebaseFirestore? = null
     private var people: CollectionReference? = null
@@ -28,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        dataText = findViewById(R.id.dataText)
+        dataText = findViewById(R.id.editText)
         nameText = findViewById(R.id.nameText)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
